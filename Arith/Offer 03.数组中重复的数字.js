@@ -1,0 +1,44 @@
+/** 
+ * 2020/02/23
+ *
+ * 找出数组中重复的数字。
+
+
+    在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。
+
+    示例 1：
+
+    输入：
+    [2, 3, 1, 0, 2, 5, 3]
+    输出：2 或 3 
+
+ */
+
+ /** 这题方法好多，可以简单的用一个set来实现。也可以将数组sort排序一遍，然后对比相邻两个数。
+
+
+ */
+
+
+
+ /**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var findRepeatNumber = function(nums) {
+    const set = new Set()
+   for (let i = 0; i < nums.length; i++) {
+     if (set.has(nums[i])) return nums[i]
+     set.add(nums[i])
+   }
+   return 0
+};
+
+var findRepeatNumber = function(nums) {
+    nums.sort((a, b) => a - b)
+   for (let i = 0; i < nums.length-1; i++) {
+     if (nums[i + 1] === nums[i]) return nums[i]
+   }
+   return -1
+
+};
