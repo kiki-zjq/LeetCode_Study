@@ -16,7 +16,7 @@ var twoSum = function(nums, target) {
 // 别人的算法 44 ms
 
 var twoSum = function(nums, target) {
-     var temp = [];
+    var temp = [];
     for(var i=0;i<nums.length;i++){
         var dif = target - nums[i];
         if(temp[dif] != undefined){
